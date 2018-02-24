@@ -4,7 +4,7 @@ A simple script for resizing images and settings their quality. Based on imagema
 # HowTo
 
 The script is based on imagemagick and assumes that you already have it running on your computer.
-You can get it [here](https://www.imagemagick.org/script/download.php) or install it using brew, dnf, apt-get or whatever package manager is running on your system.
+You can get it [here](https://www.imagemagick.org/script/download.php) or install it using brew, dnf, apt-get or whatever package manager running on your system.
 
 Once you have imagemagick, check out the available options:
 ```
