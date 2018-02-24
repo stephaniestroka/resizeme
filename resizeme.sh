@@ -80,9 +80,11 @@ fi
 [[ $OUTDIR == /* ]] || OUTDIR="${CURRENTDIR}/${OUTDIR}"
 
 cd $INDIR
-for file in $(find . -type f -iregex '.*\.\(jpg\|gif\|png\|jpeg\)$'); do 
+for file in $(find . -type f \( -iname '*.jpg' -o -iname '*.gif' -o -iname '*.png' -o -iname '*.jpeg' \)); do
   [[ $file == ./* ]] && file=${file:2}
   echo "Converting $file"
+  dir=$(dirname $OUTDIR/$file)
+  mkdir -p $dir
   if [ -n "$WIDTH" ] && [ -n "$QUALITY" ]; then
     convert $file -${ADAPTIVE}resize ${WIDTH} -quality ${QUALITY} ${OUTDIR}/${file}
   elif [ -n "$WIDTH" ]; then
