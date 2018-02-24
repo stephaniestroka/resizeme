@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # default values:
+CURRENTDIR=$(pwd)
 OUTDIR=out
 ADAPTIVE=""
 
@@ -76,7 +77,7 @@ fi
 
 # create directory if it does not exist
 [ -d $OUTDIR ] || mkdir $OUTDIR
-[[ $OUTDIR == /* ]] || OUTDIR="../${OUTDIR}"
+[[ $OUTDIR == /* ]] || OUTDIR="${CURRENTDIR}/${OUTDIR}"
 
 cd $INDIR
 for file in $(find . -type f -iregex '.*\.\(jpg\|gif\|png\|jpeg\)$'); do 
