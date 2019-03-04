@@ -80,6 +80,7 @@ fi
 [[ $OUTDIR == /* ]] || OUTDIR="${CURRENTDIR}/${OUTDIR}"
 
 cd $INDIR
+IFS=$'\t\n' # set the Internal Field Separator to split fields by tab and newline while ignoring spaces
 for file in $(find . -type f \( -iname '*.jpg' -o -iname '*.gif' -o -iname '*.png' -o -iname '*.jpeg' \)); do
   [[ $file == ./* ]] && file=${file:2}
   echo "Converting $file"
@@ -93,4 +94,5 @@ for file in $(find . -type f \( -iname '*.jpg' -o -iname '*.gif' -o -iname '*.pn
     convert $file -quality ${QUALITY} ${OUTDIR}/${file}
   fi
 done;
+unset $IFS;
 cd --

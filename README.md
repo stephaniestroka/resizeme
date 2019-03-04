@@ -1,16 +1,20 @@
 # resizeme
-A simple script for resizing images and settings their quality. Based on imagemagick.
 
-# HowTo
+A simple script for resizing all images in a given directory and setting their quality based on [ImageMagick](https://www.imagemagick.org/).
 
-The script is based on imagemagick and assumes that you already have it running on your computer.
-You can get it [here](https://www.imagemagick.org/script/download.php) or install it using brew, dnf, apt-get or whatever package manager running on your system.
+## Requirements
 
-Once you have imagemagick, check out the available options:
-```
+The script assumes that you have ImageMagick installed on your computer.
+You can download it from [their website](https://www.imagemagick.org/script/download.php) or install it using brew (`brew install imagemagick`), dnf, apt-get or whatever package manager is running on your system.
+
+## Options
+
+Once you have ImageMagick, check out the available options:
+
+```text
 bash-4.4$ ./resizeme.sh -h
 
-The following commands are available: 
+The following commands are available:
 
 -i / --input:   The input directory is recursively searched for image files.
 -o / --output:  The output directory is used to store the converted images.
